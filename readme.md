@@ -5,6 +5,6 @@
 
 Read more about it [here](https://en.wikipedia.org/wiki/Binary_search_tree)
 
-This repo contains the basic implementation of Binary Search Tree in Javascript.
+This repo contains the basic implementation of Binary Search Tree in JavaScript.
 
 Feel free to contribute.
