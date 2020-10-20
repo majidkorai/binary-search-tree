@@ -1,0 +1,20 @@
+{
+  "name": "binary-search-tree",
+  "version": "1.0.0",
+  "description": "Bellow is the basic definition of the Binary Search Tree.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majidkorai/binary-search-tree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majidkorai/binary-search-tree/issues"
+  },
+  "homepage": "https://github.com/majidkorai/binary-search-tree#readme"
+}

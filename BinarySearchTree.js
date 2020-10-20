@@ -1,5 +1,5 @@
-import { TRAVERSAL_ORDERS } from './constants';
-import Node from "./Node";
+import TRAVERSAL_ORDERS from './constants.js';
+import Node from "./Node.js";
 
 class BinarySearchTree {
   constructor() {

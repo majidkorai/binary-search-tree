@@ -1,6 +1,6 @@
 
-import { TRAVERSAL_ORDERS } from './constants';
-import BinarySearchTree from './BinarySearchTree';
+import TRAVERSAL_ORDERS from './constants.js';
+import BinarySearchTree from './BinarySearchTree.js';
 
 // create an instance of binary search tree.
 const BST = new BinarySearchTree();
