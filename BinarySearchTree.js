@@ -36,6 +36,58 @@ class BinarySearchTree {
     }
   }
 
+  remove(value) {
+    let root = this.getRoot();
+    if (root === null) // its an empty tree, because root node is null;
+      console.log('Empty tree. No node deleted');
+    else               // tree is not empty, lets find and delete the node.
+      root = this.removeNode(root, value);
+  }
+
+  removeNode(node, value) {
+    if (node.value === value) { // we have found the node to be deleted
+
+      if (node.count > 1) { // because our tree allows duplicates, if current node has more then 1 items, we just remove 1 of them.
+        node.count -= 1;
+        return node;
+      }
+      // if no children for this node. easy to delete
+      if (node.left === null && node.right === null) {
+        return null;
+      }
+      // if node has right child but not left child, node will be replaced by the right child.
+      if (node.left === null) {
+        return node.right;
+      }
+      // if node has left child but not right child, node will be replaced by the left child.
+      if (node.right === null) {
+        return node.left;
+      }
+      // at this point we know that this node has both right and left children. So its not easy to replace. 
+      // What we need is to find a node, which is bigger then this node but smaller then all other nodes in the tree.
+      // lets find that node.
+      const tempNode = node.right;
+      while (tempNode.left !== null) { // because we know that, we can find the value in right sub-tree and it should be the left most leaf of the sub-tree.
+        tempNode = tempNode.left;
+      }
+      // replace the value of the node with the value of newly found node. 
+      node.value = tempNode.value;
+      // correct the order in the right sub-tree
+      node.right = this.removeNode(node.right, tempNode.value);
+      return node;
+    }
+    // if value is less then current node's value, then it will be on the left side of the tree, we will look for it in the left sub-tree.
+    else if (value < node.value) {
+      node.left = this.removeNode(node.left, value);
+      return node;
+    }
+    // if value is bigger then current node's value, then it will be on the right side of the tree and we will look for it in the right sub-tree.
+    else {
+      node.right = this.removeNode(node.right, value);
+      return node;
+    }
+  }
+
   // in Pre-order traversal we visit the root node first, then we visit left sub-tree (if any) and in the last we visit the right node or sub-tree (if any).
   traversePreOrder(node) {
     if (node !== null) {

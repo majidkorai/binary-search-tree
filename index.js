@@ -38,3 +38,11 @@ console.log('\n');
 console.log('POST - ORDER Traversal')
 BST.traverse(TRAVERSAL_ORDERS.POSTORDER, root);
 console.log('\n');
+
+//Remove a node
+BST.remove(2);
+
+// lets check if node is actually removed.
+console.log('Check if node is removed')
+BST.traverse(TRAVERSAL_ORDERS.INORDER, root);
+console.log('\n');
