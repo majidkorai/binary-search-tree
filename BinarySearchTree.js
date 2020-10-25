@@ -19,7 +19,6 @@ class BinarySearchTree {
       this.insertNode(this.root, node);
   }
 
-  //Pre-Order Traversal
   traverse(order, node) {
     switch (order) {
       case TRAVERSAL_ORDERS.PREORDER:
